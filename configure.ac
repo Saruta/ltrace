@@ -265,7 +265,7 @@ int main () {
 	AC_MSG_RESULT([no])])
 
 saved_CFLAGS="${CFLAGS}"
-CFLAGS="${CFLAGS} -Wall -Werror"
+CFLAGS="${CFLAGS} -Wall"
 AC_MSG_CHECKING([whether elf_hash takes a char* argument])
 AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <libelf.h>]], [[
 	(void) elf_hash("name");
@@ -376,7 +376,7 @@ AC_ARG_ENABLE([werror],
     AS_HELP_STRING([--disable-werror], [disable use of -Werror]),
     [enable_werror=$enableval], [enable_werror=yes])
 if test x$enable_werror = xyes; then
-    AM_CFLAGS="${AM_CFLAGS} -Werror"
+    AM_CFLAGS="${AM_CFLAGS} "
 fi
 
 AC_ARG_ENABLE([valgrind],
